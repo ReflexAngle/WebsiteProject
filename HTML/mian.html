@@ -8,42 +8,47 @@
 <!--#004d4d-->
 </head>
     <body>
+        <div id="linkfixed">
+            <ul>
+                <li id="Linekln">
+                    <a href="https://www.linkedin.com/in/bradley-petersen-190b6b1a7/" target="_blank">
+                        <img src="pics\ChatGPT Image Mar 27, 2025, 04_56_42 PM.png" alt="LinkedIn Logo">
+                    </a>
+                </li>
+                <li id="Github">
+                    <a href="https://github.com/ReflexAngle" target="_blank">
+                        <img src="pics\ChatGPT Image Mar 27, 2025, 04_56_39 PM.png" alt="GitHub Logo">
+                    </a>
+                </li>
+                <li id="Email">
+                    <a href="https://www.google.com">
+                        <img src="pics\ChatGPT Image Mar 27, 2025, 05_05_22 PM.png" alt="Email Logo">
+                    </a>
+                </li>
+                <li id="Resume">
+                    <a href="docs/Bradley_Petersen_Resume_2024-2.pdf">
+                        <img src="pics\ChatGPT Image Mar 27, 2025, 04_59_37 PM.png" alt="Resume Logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div id="scrollContainer">
             <section id="headerPart">
                 <div id="NameHeader">
                     <h4>Hello My Name is </h4>
                     <h1>Bradley Petersen</h1>
-                    <h4>This is My Portfolio Website</h4>
-                    <h4>Im a graduate student at MSU Mankato</h4>
-                    <button>Projects</button>
+                    <p>Im currently a graduate student at Minnesota State University Mankato. I study Information Technology and Political Science.
+                        Currently Im learning about web development and information security.
+                    </p>
+                    <button id="toProjects">Projects</button>
                     <button>Research Papers</button>
                 </div>
-                <!--links to various areas of intrest-->
-                <div id="linkfixed">
-                    <ul>
-                        <li id="Linekln">
-                            <a href="https://www.linkedin.com/in/bradley-petersen-190b6b1a7/" target="_blank">
-                                <img src="pics\ChatGPT Image Mar 27, 2025, 04_56_42 PM.png" alt="LinkedIn Logo">
-                            </a>
-                        </li>
-                        <li id="Github">
-                            <a href="https://github.com/ReflexAngle" target="_blank">
-                                <img src="pics\ChatGPT Image Mar 27, 2025, 04_56_39 PM.png" alt="GitHub Logo">
-                            </a>
-                        </li>
-                        <li id="Email">
-                            <a href="https://www.google.com">
-                                <img src="pics\ChatGPT Image Mar 27, 2025, 05_05_22 PM.png" alt="Email Logo">
-                            </a>
-                        </li>
-                        <li id="Resume">
-                            <a href="https://www.google.com">
-                                <img src="pics\ChatGPT Image Mar 27, 2025, 04_59_37 PM.png" alt="Resume Logo">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section id="sillsPart">
+                <h1>skills</h1>
+                <div>
 
+                </div>
             </section>
             <section id="projectsPart">
                 <h1>Projects</h1>
@@ -60,8 +65,7 @@
                 <input type="text" id="name" placeholder="Name">
                 <input type="text" id="email" placeholder="Email Address">
                 <input type="text" id="message" placeholder="Message">
-                <input type="submit" id="submit" value="Submit">
-                
+                <button id="submit">Submit</button>
 
             </section>
 
@@ -77,10 +81,11 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
+
     }
 
 </style>
 
-<script>
-
+<script href="main.js">
+    const goToProjects = document.getElementById("");
 </script>
