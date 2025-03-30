@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to bottom, purple, #000000);
+    background: linear-gradient(to bottom, magenta, #000000);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -93,7 +93,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Text color */
+    color: aliceblue; /* Text color */
     font-size: 0; /* Hide text initially */
     transition: transform 0.3s, font-size 0.3s, background-color 0.3s; /* Smooth hover effect */
     cursor: pointer;
@@ -119,4 +119,26 @@ button:hover{
 .Resume::before{
     content: "Resume";
 
+}
+#skillsPart > div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+.skillBox {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid aliceblue;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.skillBox:hover {
+    background-color: aliceblue;
+    color: magenta;
+    transform: scale(1.1);
 }

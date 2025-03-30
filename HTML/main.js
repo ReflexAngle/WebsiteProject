@@ -1,15 +1,22 @@
-const skills = ["HTML", "CSS", "JavaScript", "Python", "C#", "Unity", "Node.JS", "MySQL",]
+const skills = ["HTML", "CSS", "JavaScript", "Python", "C#", "Azure", "Node.JS", "MySQL",];
+const skillsContainer = document.querySelector("#skillsPart > div");
+const goToSkills = document.getElementById("toSkills");
 const goToProjects = document.getElementById("toProjects");
-const resumePath = 'docs/Bradley_Petersen_Resume_2024-2.pdf'
+const goToResearch = document.getElementById("toResearch");
 
-const skillsContainer = document.getElementById("sillsPart");
-const resumeButton = document.getElementById("resumeButton");
+goToSkills.addEventListener("click", function(){
+    document.getElementById("skillsPart").scrollIntoView({ behavior: "smooth" });
+});
+goToProjects.addEventListener("click", function(){
+    document.getElementById("projectsPart").scrollIntoView({ behavior: "smooth" });
+});
+goToResearch.addEventListener("click", function(){
+    document.getElementById("researchPart").scrollIntoView({ behavior: "smooth" });
+});
 
 skills.forEach(skill => {
     const skillBox = document.createElement("div");
-    skillBox.className = "skill-box";
+    skillBox.classList.add("skillBox");
     skillBox.textContent = skill;
-
     skillsContainer.appendChild(skillBox);
-
 });
