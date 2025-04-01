@@ -132,7 +132,7 @@ button:hover{
 
 #skillsMicroAdjustments h1 {
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: aliceblue;
     width: 100%;
 }
@@ -143,8 +143,6 @@ button:hover{
     gap: 15px;
     justify-content: center;
     padding: 20px;
-
-
 
 }
 .skillBox {
@@ -162,4 +160,34 @@ button:hover{
     background-color: aliceblue;
     color: transparent;
     transform: scale(1.1);
+}
+#projectsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5rem;
+
+}
+.projectBox {
+    border: 2px solid aliceblue;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s;
+}
+.projectBox:hover{
+    background-color: aliceblue;
+    transform: scale(1.1);
+    color: transparent;
+}
+#senderEmail{
+
+}
+#senderMessageBox{
+
+
 }

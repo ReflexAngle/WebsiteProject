@@ -8,10 +8,19 @@ const skills = [
     { name: "Node.JS", file: "7_nodeJS.png" },
     { name: "MySQL", file: "8_mysql.png" }
 ];
+// eventually should be moves to an SQL database
+// but this works for now.
+const projects = [
+    { name: "lockBox", link: "https://github.com/ReflexAngle/LockBox"},
+    { name: "MarketCarting", link: "https://github.com/ReflexAngle/MarketCharting"}];
+
+const projectsContainer = document.getElementById("projectContainer"); // Corrected ID
+
 const skillsContainer = document.getElementById("skillsContainer");
 const goToSkills = document.getElementById("toSkills");
 const goToProjects = document.getElementById("toProjects");
 const goToResearch = document.getElementById("toResearch");
+const goToContact = document.getElementById("toContact");
 
 goToSkills.addEventListener("click", function(){
     document.getElementById("skillsPart").scrollIntoView({ behavior: "smooth" });
@@ -22,7 +31,12 @@ goToProjects.addEventListener("click", function(){
 goToResearch.addEventListener("click", function(){
     document.getElementById("researchPart").scrollIntoView({ behavior: "smooth" });
 });
+goToContact.addEventListener("click", function(){
+    document.getElementById("contactPart").scrollIntoView({ behavior: "smooth" });
+});
 
+// loops through the skills array and creates a div for each skill
+// with an image and a name, then appends it to the skills container
 skills.forEach((skill, index) => {
     const skillBox = document.createElement("div");
     skillBox.classList.add("skillBox"); // Add a class for styling
@@ -39,4 +53,14 @@ skills.forEach((skill, index) => {
 
     // Append the skill box to the container
     skillsContainer.appendChild(skillBox);
+});
+
+// loops through the projects array and creates a div for each project
+projects.forEach((project, index) => {
+    const projectBox = document.createElement("div");
+    projectBox.classList.add("projectBox"); // Add a class for styling
+    projectBox.textContent = project;
+    projectsContainer.appendChild(projectBox);
+
+
 });
