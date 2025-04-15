@@ -12,7 +12,10 @@ const skills = [
 // but this works for now.
 const projects = [
     { name: "lockBox", link: "https://github.com/ReflexAngle/LockBox"},
-    { name: "MarketCarting", link: "https://github.com/ReflexAngle/MarketCharting"}];
+    { name: "MarketCarting", link: "https://github.com/ReflexAngle/MarketCharting"},
+    { name: "Website", link: "https://github.com/ReflexAngle/WebsiteProject"},
+    { name: "Claw Warfare", link: ""},
+];
 
 const projectsContainer = document.getElementById("projectContainer"); // Corrected ID
 
@@ -21,6 +24,7 @@ const goToSkills = document.getElementById("toSkills");
 const goToProjects = document.getElementById("toProjects");
 const goToResearch = document.getElementById("toResearch");
 const goToContact = document.getElementById("toContact");
+//const backToTopButton = document.getElementById("toTop");
 
 goToSkills.addEventListener("click", function(){
     document.getElementById("skillsPart").scrollIntoView({ behavior: "smooth" });
@@ -34,6 +38,9 @@ goToResearch.addEventListener("click", function(){
 goToContact.addEventListener("click", function(){
     document.getElementById("contactPart").scrollIntoView({ behavior: "smooth" });
 });
+// backToTopButton.addEventListener("click", function(){
+//     document.getElementById("headerPart").scrollIntoView({ behavior: "smooth" });
+// });
 
 // loops through the skills array and creates a div for each skill
 // with an image and a name, then appends it to the skills container
@@ -55,12 +62,48 @@ skills.forEach((skill, index) => {
     skillsContainer.appendChild(skillBox);
 });
 
-// loops through the projects array and creates a div for each project
-projects.forEach((project, index) => {
-    const projectBox = document.createElement("div");
-    projectBox.classList.add("projectBox"); // Add a class for styling
-    projectBox.textContent = project;
-    projectsContainer.appendChild(projectBox);
 
+// when the user isnt on the main section of the page, the button will appear
+// when clicked the page will scroll to the top
+function showBackToTopButton(){
+    if(document.documentElement.scrollTop > 20 || document.body.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+    }
 
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetchGitHubProjects();
 });
+
+function fetchGitHubProjects(){
+    const username = "ReflexAngle";
+    const pinnedRepos = ["lockBox", "MarketCharting", "WebsiteProject", "Education_VR_Project"];
+    const projectContainer = document.getElementById("projectContainer");
+
+    // gets the projects from the GitHub API
+    // and creates a div for each project with the name and a link to the project
+    pinnedRepos.forEach(repoName => {
+        fetch(`https://api.github.com/repos/${username}/${repoName}`)
+            .then(response => response.json())
+            .then(repo => {
+                const card = document.createElement("div");
+                card.classList.add("projectCard");
+
+                card.innerHTML = `
+                    <div class="githubCardHeader">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                        <span>GitHub - ${repo.full_name}</span>
+                    </div>
+                    <p class="projectTitle">${repo.name}</p>
+                    <p class="projectDesc">${repo.description || "No description provided."}</p>
+                    <a href="${repo.html_url}" class="githubLink" target="_blank">View on GitHub</a>
+                `;
+
+                projectContainer.appendChild(card);
+            })
+            .catch(error => {
+                console.error(`Failed to fetch ${repoName}:`, error);
+            });
+    });
+}
