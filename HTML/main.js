@@ -89,7 +89,8 @@ function fetchGitHubProjects(){
             .then(repo => {
                 const card = document.createElement("div");
                 card.classList.add("projectCard");
-
+                // Adds the project name and description to the card
+                // and a link to the project on GitHub
                 card.innerHTML = `
                     <div class="githubCardHeader">
                         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">

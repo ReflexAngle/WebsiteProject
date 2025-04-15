@@ -169,18 +169,24 @@ button:hover{
     color: transparent;
     transform: scale(1.1);
 }
-#projectsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#projectContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
     padding: 20px;
-    font-size: 1.5rem;
-    gap: 15px;
-    
-
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.projectBox {
+#projectsContainer h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: aliceblue;
+    width: 100%;
+}
+/* .projectBox {
     border: 2px solid aliceblue;
     padding: 20px;
     margin: 10px;
@@ -189,7 +195,7 @@ button:hover{
     max-width: 600px;
     background-color: rgba(255, 255, 255, 0.05);
     transition: transform 0.3s;
-}
+} */
 /*---------------------------------------*/
 .projectCard {
     border: 2px solid aliceblue;
@@ -201,6 +207,9 @@ button:hover{
     margin-bottom: 20px;
     color: aliceblue;
     transition: transform 0.3s, background-color 0.3s;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .projectCard:hover {
