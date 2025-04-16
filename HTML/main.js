@@ -25,6 +25,15 @@ const goToProjects = document.getElementById("toProjects");
 const goToResearch = document.getElementById("toResearch");
 const goToContact = document.getElementById("toContact");
 //const backToTopButton = document.getElementById("toTop");
+// call information from the json file
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("docs/information.json")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("name").textContent = data.name;
+            document.getElementById("description").textContent = data.decription;
+        })
+});
 
 goToSkills.addEventListener("click", function(){
     document.getElementById("skillsPart").scrollIntoView({ behavior: "smooth" });
@@ -98,11 +107,13 @@ function fetchGitHubProjects(){
                     </div>
                     <p class="projectTitle">${repo.name}</p>
                     <p class="projectDesc">${repo.description || "No description provided."}</p>
-                    <a href="${repo.html_url}" class="githubLink" target="_blank">View on GitHub</a>
-                `;
+                    <a href="${repo.html_url}" class="githubLink" target="_blank">View on GitHub</a> 
+                `;// turn the <a> to a button to make it look more clean 
 
                 projectContainer.appendChild(card);
             })
+            // fail safe in case the API fails to fetch the data
+            // or the project does not exist
             .catch(error => {
                 console.error(`Failed to fetch ${repoName}:`, error);
             });
