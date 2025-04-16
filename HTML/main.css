@@ -101,7 +101,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: aliceblue; /* Text color */
+    color: aliceblue; 
     font-size: 0; /* Hide text initially */
     transition: transform 0.3s, font-size 0.3s, background-color 0.3s; /* Smooth hover effect */
     cursor: pointer;
@@ -169,15 +169,31 @@ button:hover{
     color: transparent;
     transform: scale(1.1);
 }
+#projectsPart {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    
+    height: 100vh; 
+    padding: 0; 
+    margin: 0;
+}
+
+#projectsPart h1 {
+    margin: 0;
+    padding: 10px 0; 
+}
 #projectContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: center;
+    row-gap: 10px;
+    column-gap: 40px;
+    
     align-items: start;
     padding: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 #projectsContainer h1 {
@@ -202,14 +218,14 @@ button:hover{
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 15px;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
     color: aliceblue;
     transition: transform 0.3s, background-color 0.3s;
     display : flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 160px; 
+    width: 100%;
+    max-width: 100%;
 }
 
 .projectCard:hover {
