@@ -70,7 +70,7 @@ skills.forEach((skill, index) => {
 
     // Create an img element for the skill icon
     const skillImage = document.createElement("img");
-    skillImage.src = `IconPics/${skill.file}`; // Use the file name from the mapping
+    skillImage.src = `/static/IconPics/${skill.file}`; // Use the file name from the mapping
     skillImage.alt = `${skill.name} Icon`;
     skillImage.style.width = "100px"; // Set the width of the image
     skillImage.style.height = "100px"; // Set the height of the image
