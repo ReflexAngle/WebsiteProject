@@ -202,16 +202,7 @@ button:hover{
     color: aliceblue;
     width: 100%;
 }
-/* .projectBox {
-    border: 2px solid aliceblue;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s;
-} */
+
 /*---------------------------------------*/
 .projectCard {
     border: 2px solid aliceblue;
@@ -261,4 +252,30 @@ button:hover{
     margin-top: 10px;
     color: cyan;
     text-decoration: underline;
+}
+.message{
+    height: 500px;
+    width: 500px;
+
+}
+#contactPart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+#name{
+    width: 40vw;
+}
+#email{
+    width: 40vw;
+}
+#message{
+    height: 40vh;
+    width: 40vw;
+    font-size: large;
 }

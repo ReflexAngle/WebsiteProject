@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="static/css/main.css">
     <title>Document</title>
 <!--#004d4d-->
 </head>
@@ -17,18 +17,21 @@
                 </li>
                 <li id="Github">
                     <a href="https://github.com/ReflexAngle" target="_blank">
-                        <img src="pics\GitHub_.png" alt="GitHub Logo">
+                        <img src="static\pics\GitHub_.png" alt="GitHub Logo">
                     </a>
                 </li>
                 <li id="Email">
                     <a href="https://www.google.com">
-                        <img src="pics\email.png" alt="Email Logo">
+                        <img src="static\pics\email.png" alt="Email Logo">
                     </a>
                 </li>
                 <li id="Resume">
                     <a href="google.com">
-                        <img src="pics\resum.png" alt="Resume Logo">
+                        <img src="static\pics\resum.png" alt="Resume Logo">
                     </a>
+                </li>
+                <li id="toTop">
+                    <img src="static\pics\arrowhead-up.png" alt="To Top">
                 </li>
             </ul>
         </div>
@@ -80,10 +83,11 @@
 
             </section>
             <!--an email portion-->
-            <section id="contactPart">
+            <section  id="contactPart">
+                <h1>Contact Me</h1>
                 <input type="text" id="name" placeholder="Name">
                 <input type="text" id="email" placeholder="Email Address">
-                <input type="text" id="message" placeholder="Message">
+                <textarea id="message" placeholder="Message" rows="5" cols="30" ></textarea>
                 <button id="submit">Submit</button>
 
             </section>
@@ -94,18 +98,11 @@
 </html>
 
 <style>
-    #contactPart{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-
-    }
+    
 
 </style>
 
-<script src="main.js" >
+<script src="static/js/main.js" >
     
 </script>
     

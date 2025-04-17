@@ -24,10 +24,11 @@ const goToSkills = document.getElementById("toSkills");
 const goToProjects = document.getElementById("toProjects");
 const goToResearch = document.getElementById("toResearch");
 const goToContact = document.getElementById("toContact");
+const backToTopButton = document.getElementById("toTop");
 //const backToTopButton = document.getElementById("toTop");
 // call information from the json file
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("docs/information.json")
+    fetch("static/docs/information.json")
         .then(response => response.json())
         .then(data => {
             document.getElementById("name").textContent = data.name;
@@ -46,6 +47,16 @@ goToResearch.addEventListener("click", function(){
 });
 goToContact.addEventListener("click", function(){
     document.getElementById("contactPart").scrollIntoView({ behavior: "smooth" });
+});
+backToTopButton.addEventListener("click", function(){
+    const headerSection = document.getElementById("headerPart");
+    const headerSectionRect = headerSection.getBoundingClientRect().top;
+
+    if (Math.abs(headerSectionRect) > 1) {
+        document.getElementById("headerPart").scrollIntoView({behavior: "smooth"});
+    }else {
+        alert("Would you look at that.")
+    }
 });
 // backToTopButton.addEventListener("click", function(){
 //     document.getElementById("headerPart").scrollIntoView({ behavior: "smooth" });
