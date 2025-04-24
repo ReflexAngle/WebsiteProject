@@ -130,3 +130,46 @@ function fetchGitHubProjects(){
             });
     });
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+    const submitButton = document.getElementById("submit");
+
+    submitButton.addEventListener('click', async (e) => {
+        e.preventDefault();           // don’t reload the page
+    
+        // 2. scope your queries to #contactPart so you grab the right inputs
+        const name    = document.querySelector('#contactPart #name').value.trim();
+        const email   = document.querySelector('#contactPart #email').value.trim();
+        const message = document.querySelector('#contactPart #message').value.trim();
+    
+        // basic client‑side validation
+        if (!name || !email || !message) {
+          alert('All fields are required.');
+          return;
+        }
+    
+        try {
+          // 3. send a form‑encoded POST
+          const response = await fetch('/submit-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ name, email, message })
+          });
+    
+          const result = await response.json();
+    
+          if (response.ok) {
+            alert(result.success);      // e.g. "Form submitted successfully"
+            // optionally clear the fields:
+            document.querySelector('#contactPart #name').value =
+            document.querySelector('#contactPart #email').value =
+            document.querySelector('#contactPart #message').value = '';
+          } else {
+            alert(result.error || 'Submission failed.');
+          }
+        } catch (err) {
+          console.error(err);
+          alert('An unexpected error occurred.');
+        }
+      });
+});
